@@ -1,7 +1,7 @@
 import React from 'react';
-import googleMaps from '/rise_above_homes/src/assets/google_maps.svg';
-import facebook from '/rise_above_homes/src/assets/facebook.svg';
-import instagram from '/rise_above_homes/src/assets/instagram.svg';
+import googleMaps from '/rise_above_homes/src/assets/google_maps.png';
+import facebook from '/rise_above_homes/src/assets/facebook.png';
+import instagram from '/rise_above_homes/src/assets/instagram.png';
 
 const Footer = () => {
 
