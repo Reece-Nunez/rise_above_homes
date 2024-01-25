@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from '/rise_above_homes/src/assets/transparent_black_logo.svg';
+import logo from '/rise_above_homes/public/transparent_black_logo.svg';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
