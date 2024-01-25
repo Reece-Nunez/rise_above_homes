@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import exteriorImage from '/rise_above_homes/src/assets/exteriors.jpg';
-import interiorImage from '/rise_above_homes/src/assets/interiors.jpg';
-import kitchenImage from '/rise_above_homes/src/assets/kitchens.jpg';
-import bathroomImage from '/rise_above_homes/src/assets/bathrooms.jpg';
+import exteriorImage from "../assets/exteriors.jpg";
+import interiorImage from "../assets/interiors.jpg";
+import kitchenImage from "../assets/kitchens.jpg";
+import bathroomImage from "../assets/bathrooms.jpg";
 
 const Gallery = () => {
     const controls = useAnimation(); // Initialize the animation controls

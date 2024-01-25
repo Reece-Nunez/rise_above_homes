@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
-import fatherAndSon from "/rise_above_homes/src/assets/father_and_son.png";
+import fatherAndSon from "../assets/father_and_son.png";
 
 const About = () => {
 
