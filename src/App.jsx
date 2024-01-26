@@ -36,9 +36,7 @@ function App() {
             <About />
           </div>
         </div>
-        <div>
           <Gallery />
-        </div>
         <div>
           <ContactForm />
         </div>
