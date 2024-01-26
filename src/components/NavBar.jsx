@@ -32,7 +32,7 @@ const Navbar = () => {
                 <a href='#home'><img src={logo} alt="Logo" className="h-14" /></a>
             </div>
             <div className='hidden sm:flex'>
-                <ul className="flex">
+                <ul className="menu_items flex">
                     <li className="mr-24">
                         <a href="#home" className="text-black hover:text-gray-700 text-2xl font-bold">Home</a>
                     </li>

@@ -30,17 +30,19 @@ function App() {
 
     <div>
       <Navbar />
-        <div className="content-container">
-          <Slideshow images={images} />
-          <div>
-            <About />
-          </div>
+      <div className="content-container">
+        <Slideshow images={images} />
+        <div>
+          <About />
         </div>
-          <Gallery />
-        <div className='contact_form'>
-          <ContactForm />
-        </div>
-        <Footer />
+      </div>
+      <div>
+        <Gallery />
+      </div>
+      <div className='contact_form'>
+        <ContactForm />
+      </div>
+      <Footer />
     </div>
   )
 }
