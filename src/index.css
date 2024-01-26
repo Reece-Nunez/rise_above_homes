@@ -70,4 +70,17 @@ html, body {
   .slides {
     height: 400px;
   }
+
+  .father_and_son {
+    height: 300px;
+  }
+
+  .about_title {
+    font-size: 40px;
+  }
+
+  .about_us_content {
+    margin: 0;
+    font-size: 15px;
+  }
 }

@@ -32,7 +32,7 @@ const About = () => {
                         hidden: { opacity: 0, scale: 0.8 }
                     }}
                     transition={{ duration: 1.3 }}
-                    className="text-white text-7xl my-16">
+                    className="about_title text-white text-7xl my-16">
                     About Us
                 </motion.h1>
                 <motion.img
@@ -55,7 +55,7 @@ const About = () => {
                         hidden: { opacity: 0, y: -20 }
                     }}
                     transition={{ duration: 1.8 }}
-                    className="text-white mx-64 my-12">
+                    className="about_us_content text-white mx-64 my-12">
                         For over 20 years, Rise Above Homes, a dedicated father and son team,
                         has been passionately crafting homes, not just houses, with a commitment
                         to perfection in their craft. With the ethos of "Standards Above Measure,"
