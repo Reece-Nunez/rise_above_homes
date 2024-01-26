@@ -45,3 +45,29 @@ html, body {
     transform: rotate(360deg);
   }
 }
+
+/* Default styles for larger screens */
+.slick-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* For medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .slick-slide img {
+      height: 650px; /* Adjusted height for medium screens */
+  }
+}
+
+/* For small devices (phones, 480px and up) */
+@media (max-width: 480px) {
+  .slick-slide img {
+      height: 350px; /* Adjusted height for small screens */
+      object-fit: cover;
+  }
+
+  .slides {
+    height: 400px;
+  }
+}

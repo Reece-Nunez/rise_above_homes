@@ -36,7 +36,7 @@ const Slideshow = ({ images }) => {
         <Slider {...settings}>
         {images.map((image, index) => (
             <div key={index} className='slides'>
-                <img src={image} alt={`Slide ${index}`} className="w-full object-cover" />
+                <img src={image} alt={`Slide ${index}`} className="slide-image w-full h-auto object-cover" />
             </div>
         ))}
         </Slider>
