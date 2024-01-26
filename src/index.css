@@ -95,4 +95,8 @@ html, body {
     width: 300px;
     margin: 0;
   }
+
+  .contact_form {
+    margin: 2rem;
+  }
 }

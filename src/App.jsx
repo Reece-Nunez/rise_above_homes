@@ -37,7 +37,7 @@ function App() {
           </div>
         </div>
           <Gallery />
-        <div>
+        <div className='contact_form'>
           <ContactForm />
         </div>
         <Footer />
