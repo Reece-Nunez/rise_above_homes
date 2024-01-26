@@ -29,7 +29,7 @@ const Navbar = () => {
     return (
         <nav className={`fixed top-0 w-full shadow-md z-50 px-2 sm:px-4 md:px-6 lg:px-8 flex justify-between items-center ${scrolled ? 'bg-white' : 'bg-white bg-opacity-50'}`}>
             <div className="flex-shrink-0 flex items-center">
-                <a href='#home'><img src={logo} alt="Logo" className="h-14" /></a>
+                <a href='#home'><img src={logo} alt="Logo" className="h-20" /></a>
             </div>
             <div className='hidden sm:flex'>
                 <ul className="menu_items flex">
