@@ -7,7 +7,7 @@ import creditMark from '../assets/credit_mark.png';
 const Footer = () => {
 
     return (
-        <footer className="bg-gray-700 mt-12">
+        <footer className="footer_container bg-gray-700 mt-12">
             <div className='flex justify-center'>
                 <p className="text-white text-lg m-4 hover:text-blue-400">
                     <a href='#home'>Home</a>
@@ -31,7 +31,7 @@ const Footer = () => {
                 <p className=' text-sm text-white'>Website Created By: </p>
                 <a href='https://www.reece-nunez.com'><img src={creditMark} alt="Credit Mark" className="h-20 mt-3" /></a>
             </div>
-            <div className="flex justify-center w-full p-2 mt-4 bg-gray-900">
+            <div className="copy_right flex justify-center w-full p-2 mt-4 bg-gray-900">
                 <p className="text-center text-white text-sm tracking-wide uppercase">Copyright &copy; 2024 Rise Above Homes LLC</p>
             </div>
         </footer>
