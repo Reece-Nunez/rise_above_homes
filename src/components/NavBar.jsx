@@ -84,10 +84,10 @@ const Navbar = () => {
                     </li>
                 </ul>
             </div>
-            <div className='sm:hidden'>
-                <Link onClick={toggleMenu}>
+            <div className='block sm:hidden'>
+                <button onClick={toggleMenu}>
                     {isOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" /> }
-                </Link>
+                </button>
             </div>
             {isOpen && (
                 <div className='absolute top-0 right-0 w-2/3 h-screen bg-white shadow-xl z-40 flex flex-col'>
