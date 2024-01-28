@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Routes }  from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import Services from './pages/Services';
 import './App.css'
 import Navbar from './components/NavBar';
@@ -14,14 +15,70 @@ import Home1 from './assets/example_home_1.jpg';
 import Home2 from './assets/example_home_2.jpg';
 import Home3 from './assets/example_home_3.jpg';
 
+function AnimatedRoutes() {
+  const location = useLocation();
+  const images = [Home1, Home2, Home3];
+  const pageTransitionVariants = {
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      transition: { duration: 1 }
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: 1 }
+    }
+  };
+
+  return (
+    <AnimatePresence mode='wait'>
+      <Routes location={location} key={location.pathname}>
+        <Route path='/services' element={
+          <motion.div
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageTransitionVariants}>
+            <Services />
+          </motion.div>
+        } />
+        <Route path='/' element={
+          <motion.div
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageTransitionVariants}
+          >
+            <>
+              <div className="content-container">
+                <Slideshow images={images} />
+                <div>
+                  <About />
+                </div>
+              </div>
+              <div>
+                <Gallery />
+              </div>
+              <div className='contact_form'>
+                <ContactForm />
+              </div>
+            </>
+          </motion.div>
+        } />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
 function App() {
   const [loading, setLoading] = useState(true);
-  const images = [Home1, Home2, Home3];
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 4500);
   }, []);
 
   if (loading) {
@@ -31,25 +88,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route path='/services' element={<Services />} />
-        <Route path='/' element={
-          <>
-            <div className="content-container">
-              <Slideshow images={images} />
-              <div>
-                <About />
-              </div>
-            </div>
-            <div>
-              <Gallery />
-            </div>
-            <div className='contact_form'>
-              <ContactForm />
-            </div>
-          </>
-        }/>
-      </Routes>
+      <AnimatedRoutes />
       <Footer />
     </Router>
   );

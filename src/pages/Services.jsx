@@ -9,7 +9,7 @@ const Services = () => {
         <div class="w-full mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <div class="bg-gray-200">
-                    <div>
+                    <div id="design">
                     <h1 className="flex justify-center items-center mt-96 text-3xl">Design/Build</h1>
                     <p className="p-16">
                         At Rise Above Homes, we specialize in a seamless design/build process
@@ -68,7 +68,7 @@ const Services = () => {
                     <div>
                     <img src={designImage} alt="Design and Build" className="h-2/3 w-full" />
                     </div>
-                    <div>
+                    <div id="floor_plans">
                         <h1 className="flex justify-center items-center mt-96 text-3xl">Floor Plan Design</h1>
                         <p className="p-16">
                             Embark on the journey to your dream home with Rise Above Homes'
