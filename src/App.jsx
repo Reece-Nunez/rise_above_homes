@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route, Routes }  from 'react-router-dom';
+import Services from './pages/Services';
 import './App.css'
 import Navbar from './components/NavBar';
 import Slideshow from './components/Slideshow';
@@ -27,24 +29,30 @@ function App() {
   }
 
   return (
-
-    <div>
+    <Router>
       <Navbar />
-      <div className="content-container">
-        <Slideshow images={images} />
-        <div>
-          <About />
-        </div>
-      </div>
-      <div>
-        <Gallery />
-      </div>
-      <div className='contact_form'>
-        <ContactForm />
-      </div>
+      <Routes>
+        <Route path='/services' element={<Services />} />
+        <Route path='/' element={
+          <>
+            <div className="content-container">
+              <Slideshow images={images} />
+              <div>
+                <About />
+              </div>
+            </div>
+            <div>
+              <Gallery />
+            </div>
+            <div className='contact_form'>
+              <ContactForm />
+            </div>
+          </>
+        }/>
+      </Routes>
       <Footer />
-    </div>
-  )
+    </Router>
+  );
 }
 
 export default App

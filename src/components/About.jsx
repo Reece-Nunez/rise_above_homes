@@ -21,7 +21,7 @@ const About = () => {
     }, [inViewH1, inViewImg, inViewP]);
 
     return (
-        <div id="about" className="w-full bg-gray-700">
+        <div id="about" className="w-full bg-gradient-to-r from-gray-600 to-gray-400 ">
             <div className="container mx-auto mt-4 p-4 text-center">
                 <motion.h1
                     ref={refH1}

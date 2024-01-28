@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import logo from "../assets/nav_image.png";
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
@@ -43,10 +44,10 @@ const Navbar = () => {
                         <a href="#gallery" className="text-black hover:text-gray-700 text-2xl font-bold">Gallery</a>
                     </li>
                     <li className="mr-24">
-                        <a href="#services" className="text-black hover:text-gray-700 text-2xl font-bold">Services</a>
+                        <Link to="/services" className="text-black hover:text-gray-700 text-2xl font-bold">Services</Link>
                     </li>
                     <li>
-                        <a href="#contact" className="text-black hover:text-gray-700 text-2xl font-bold">Contact Us</a>
+                        <a href="/#contact" className="text-black hover:text-gray-700 text-2xl font-bold">Contact Us</a>
                     </li>
                 </ul>
             </div>
