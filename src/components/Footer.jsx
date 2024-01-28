@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import googleMaps from '../assets/google_maps.png';
 import facebook from '../assets/facebook.png';
 import instagram from '../assets/instagram.png';
@@ -6,20 +7,24 @@ import creditMark from '../assets/credit_mark.png';
 
 const Footer = () => {
 
+    const handleServicesClick = () => {
+        window.scrollTo(0, 0);
+    };
+
     return (
         <footer className="footer_container bg-gray-700 mt-12">
             <div className='flex justify-center'>
                 <p className="text-white text-lg m-4 hover:text-blue-400">
-                    <a href='#home'>Home</a>
+                    <a href='/#home'>Home</a>
                 </p>
                 <p className="text-white text-lg m-4 hover:text-blue-400">
-                    <a href='#about'>About</a>
+                    <a href='/#about'>About</a>
                 </p>
                 <p className="text-white text-lg m-4 hover:text-blue-400">
-                    <a href='#gallery'>Gallery</a>
+                    <a href='/#gallery'>Gallery</a>
                 </p>
                 <p className="text-white text-lg m-4 hover:text-blue-400">
-                    <a href='#services'>Services</a>
+                    <Link to="/services" onClick={handleServicesClick}>Services</Link>
                 </p>
             </div>
             <div className='flex justify-center'>

@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import designImage from '../assets/design_build.png'
 import floorPlans from '../assets/floor_plans.png'
 import remodel from '../assets/remodel.png'
 
 const Services = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        const hash = location.hash.replace('#', '');
+        if (hash) {
+            const element = document.getElementById(hash);
+            if(element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    }, [useLocation]);
 
     return (
-        <div class="w-full mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <div class="bg-gray-200">
-                    <div id="design">
+        <div className="w-full mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="bg-gray-200">
+                    <br id="design"></br>
+                    <div>
                     <h1 className="flex justify-center items-center mt-96 text-3xl">Design/Build</h1>
                     <p className="p-16">
                         At Rise Above Homes, we specialize in a seamless design/build process
@@ -33,6 +46,7 @@ const Services = () => {
                     <div>
                         <img src={floorPlans} alt="Floor Plans" className="mt-72"/>
                     </div>
+                    <br id="remodel"></br>
                     <div>
                         <h1 className="flex justify-center items-center mt-96 text-3xl">Remodeling & Renovation</h1>
                         <p className="p-16">
@@ -68,7 +82,8 @@ const Services = () => {
                     <div>
                     <img src={designImage} alt="Design and Build" className="h-2/3 w-full" />
                     </div>
-                    <div id="floor_plans">
+                    <br id="floor_plans"></br>
+                    <div>
                         <h1 className="flex justify-center items-center mt-96 text-3xl">Floor Plan Design</h1>
                         <p className="p-16">
                             Embark on the journey to your dream home with Rise Above Homes'

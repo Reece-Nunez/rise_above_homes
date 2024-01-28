@@ -13,9 +13,17 @@ const Navbar = () => {
         setShowDropdown(!showDropDown);
     }
 
-    const handleServicesClick = () => {
+    const handleServicesClick = (sectionId) => {
         window.scrollTo(0, 0);
         setShowDropdown(false);
+
+        setTimeout(() => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            
+            }
+        }, 0);
     };
 
     useEffect(() => {
@@ -59,13 +67,13 @@ const Navbar = () => {
                         </button>
                         {showDropDown && (
                             <div className='absolute left-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20'>
-                                <Link to="/services#design" onClick={handleServicesClick} className="block px-4 py-2 text-black hover:text-gray-700 text-sm">
+                                <Link to="/services#design" onClick={() => handleServicesClick('design')} className="block px-4 py-2 text-black hover:text-gray-700 text-sm">
                                     Design/Build
                                 </Link>
-                                <Link to="/services#floor_plans" onClick={handleServicesClick} className='block px-4 py-2 text-black hover:text-gray-700 text-sm'>
+                                <Link to="/services#floor_plans" onClick={() => handleServicesClick('floor_plans')} className='block px-4 py-2 text-black hover:text-gray-700 text-sm'>
                                     Floor Plans
                                 </Link>
-                                <Link to="/services#remodel" onClick={handleServicesClick} className='block px-4 py-2 text-black hover:text-gray-700 text-sm'>
+                                <Link to="/services#remodel "onClick={() => handleServicesClick('remodel')} className='block px-4 py-2 text-black hover:text-gray-700 text-sm'>
                                     Remodeling
                                 </Link>
                             </div>
@@ -77,15 +85,15 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className='sm:hidden'>
-                <button onClick={toggleMenu}>
+                <Link onClick={toggleMenu}>
                     {isOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" /> }
-                </button>
+                </Link>
             </div>
             {isOpen && (
                 <div className='absolute top-0 right-0 w-2/3 h-screen bg-white shadow-xl z-40 flex flex-col'>
-                    <button onClick={toggleMenu} className='self-start p-4'>
+                    <Link onClick={toggleMenu} className='self-start p-4'>
                         <XMarkIcon className="h-6 w-6" />
-                    </button>
+                    </Link>
                     <ul className="flex flex-col items-center justify-center">
                         <li className="my-4">
                             <a href="#home" className="text-black hover:text-blue-500 text-sm">Home</a>
