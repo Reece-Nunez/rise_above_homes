@@ -96,19 +96,19 @@ const Navbar = () => {
                     </Link>
                     <ul className="flex flex-col items-center justify-center">
                         <li className="my-4">
-                            <a href="#home" className="text-black hover:text-blue-500 text-sm">Home</a>
+                            <a href="/#home" className="text-black hover:text-blue-500 text-sm">Home</a>
                         </li>
                         <li className="my-4">
-                            <a href="#about" className="text-black hover:text-blue-500 text-sm ">About</a>
+                            <a href="/#about" className="text-black hover:text-blue-500 text-sm ">About</a>
                         </li>
                         <li className="my-4">
-                            <a href="#gallery" className="text-black hover:text-blue-500 text-sm ">Gallery</a>
+                            <a href="/#gallery" className="text-black hover:text-blue-500 text-sm ">Gallery</a>
                         </li>
                         <li className="my-4">
-                            <a href="#services" className="text-black hover:text-blue-500 text-sm ">Services</a>
+                            <Link to="/services#design" className="text-black hover:text-blue-500 text-sm ">Services</Link>
                         </li>
                         <li className='my-4'>
-                            <a href="#contact" className="text-black hover:text-blue-500 text-sm ">Contact Us</a>
+                            <a href="/#contact" className="text-black hover:text-blue-500 text-sm ">Contact Us</a>
                         </li>
                     </ul>
                 </div>
