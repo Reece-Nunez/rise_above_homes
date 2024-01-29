@@ -18,13 +18,13 @@ const Services = () => {
     }, [useLocation]);
 
     return (
-        <div className="w-full mx-auto">
+        <div id="services_container" className="w-full mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="bg-gray-200">
+                <div id="column1" className="bg-gray-200">
                     <br id="design"></br>
                     <div>
-                    <h1 className="flex justify-center items-center mt-96 text-3xl">Design/Build</h1>
-                    <p className="p-16">
+                    <h1 id="services_title" className="flex justify-center items-center mt-96 text-3xl">Design/Build</h1>
+                    <p id="services_content" className="p-16">
                         At Rise Above Homes, we specialize in a seamless design/build process
                         that caters to your unique vision from the ground up. Our integrated
                         approach combines architectural innovation with superior craftsmanship
@@ -43,13 +43,13 @@ const Services = () => {
                         awaits, meticulously crafted to meet your every need.
                     </p>
                     </div>
-                    <div>
-                        <img src={floorPlans} alt="Floor Plans" className="mt-72"/>
+                    <div id="image_container">
+                        <img id="services_image" src={floorPlans} alt="Floor Plans" className="mt-72"/>
                     </div>
                     <br id="remodel"></br>
                     <div>
-                        <h1 className="flex justify-center items-center mt-96 text-3xl">Remodeling & Renovation</h1>
-                        <p className="p-16">
+                        <h1 id="services_title" className="flex justify-center items-center mt-96 text-3xl">Remodeling & Renovation</h1>
+                        <p id="services_content" className="p-16">
                             Revitalize your space with Rise Above Homes' Remodeling and Renovation 
                             Services. Whether you're looking to refresh a single room or undertake 
                             a comprehensive home transformation, our team brings expertise, 
@@ -78,14 +78,14 @@ const Services = () => {
                         </p>
                     </div>
                 </div>
-                <div className="second_column">
-                    <div>
-                    <img src={designImage} alt="Design and Build" className="h-2/3 w-full" />
+                <div id="column2">
+                    <div id="image_container">
+                    <img id="services_image" src={designImage} alt="Design and Build" className="h-2/3 w-full" />
                     </div>
                     <br id="floor_plans"></br>
                     <div>
-                        <h1 className="flex justify-center items-center mt-96 text-3xl">Floor Plan Design</h1>
-                        <p className="p-16">
+                        <h1 id="services_title" className="flex justify-center items-center mt-96 text-3xl">Floor Plan Design</h1>
+                        <p id="services_content" className="p-16">
                             Embark on the journey to your dream home with Rise Above Homes'
                             bespoke Home Plan Design services. Our approach is grounded in
                             the belief that every home should be as unique as its owner. We blend 
@@ -107,8 +107,8 @@ const Services = () => {
                             the blueprint of your aspirations into a tangible reality, setting 
                             the foundation for a home that's built to last and loved to live in.
                         </p>
-                        <div>
-                            <img src={remodel} alt="Remodel Image" className="mt-[392px]" />
+                        <div id="image_container">
+                            <img id="services_image" src={remodel} alt="Remodel Image" className="mt-[392px]" />
                         </div>
                     </div>
                 </div>
