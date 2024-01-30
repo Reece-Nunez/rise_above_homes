@@ -7,15 +7,27 @@ import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/solid
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const [showDropDown, setShowDropdown] = useState(false);
+    const [showGalleryDropdown, setShowGalleryDropdown] = useState(false);
+    const [showServicesDropdown, setShowServicesDropdown] = useState(false);
 
-    const toggleDropdown = () => {
-        setShowDropdown(!showDropDown);
+    const toggleGalleryDropdown = () => {
+        setShowGalleryDropdown(!showGalleryDropdown);
+        if(showServicesDropdown) {
+            setShowServicesDropdown(false);
+        }
+    }
+
+    const toggleServicesDropdown = () => {
+        setShowServicesDropdown(!showServicesDropdown);
+        if(showGalleryDropdown) {
+            setShowGalleryDropdown(false);
+        }
     }
 
     const handleServicesClick = (sectionId) => {
         window.scrollTo(0, 0);
-        setShowDropdown(false);
+        setShowGalleryDropdown(false);
+        setShowServicesDropdown(false);
 
         setTimeout(() => {
             const section = document.getElementById(sectionId);
@@ -57,14 +69,32 @@ const Navbar = () => {
                     <li className="mr-24">
                         <a href="/#about" className="text-black hover:text-blue-700 text-2xl">About</a>
                     </li>
-                    <li className="mr-24">
-                        <a href="/#gallery" onClick={() => handleServicesClick('gallery')} className="text-black hover:text-blue-700 text-2xl">Gallery</a>
+                    <li className="mr-24 relative">
+                        <button onClick={toggleGalleryDropdown} className='flex text-black hover:text-blue-700 text-2xl'>
+                            Gallery <ChevronDownIcon className={`flex mt-2 w-5 h-5 ml-2 transform transition duration-300 ease-in-out ${showGalleryDropdown ? 'rotate-180' : ''}`} />
+                        </button>
+                        {showGalleryDropdown && (
+                            <div className='absolute left-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20'>
+                                <Link to="/services#design" onClick={() => handleServicesClick('exteriors')} className="block px-4 py-2 text-black hover:text-blue-700 text-sm">
+                                    Exteriors
+                                </Link>
+                                <Link to="/services#floor_plans" onClick={() => handleServicesClick('interiors')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
+                                    Interiors
+                                </Link>
+                                <Link to="/services#remodel "onClick={() => handleServicesClick('kitchens')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
+                                    Kitchens
+                                </Link>
+                                <Link to="/services#remodel "onClick={() => handleServicesClick('bathrooms')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
+                                    Bathrooms
+                                </Link>
+                            </div>
+                        )}
                     </li>
                     <li className="mr-24 relative">
-                        <button onClick={toggleDropdown} className='flex text-black hover:text-blue-700 text-2xl'>
-                            Services <ChevronDownIcon className={`flex mt-2 w-5 h-5 ml-2 transform transition duration-300 ease-in-out ${showDropDown ? 'rotate-180' : ''}`} />
+                        <button onClick={toggleServicesDropdown} className='flex text-black hover:text-blue-700 text-2xl'>
+                            Services <ChevronDownIcon className={`flex mt-2 w-5 h-5 ml-2 transform transition duration-300 ease-in-out ${showServicesDropdown ? 'rotate-180' : ''}`} />
                         </button>
-                        {showDropDown && (
+                        {showServicesDropdown && (
                             <div className='absolute left-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20'>
                                 <Link to="/services#design" onClick={() => handleServicesClick('design')} className="block px-4 py-2 text-black hover:text-blue-700 text-sm">
                                     Design/Build

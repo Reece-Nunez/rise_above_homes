@@ -11,6 +11,7 @@ import ContactForm from './components/ContactForm';
 import LoadingSpinner from './components/LoadingSpinner';
 import HouseAnimation from './components/HouseAnimation';
 import Footer from './components/Footer';
+import Exteriors from './pages/exteriors'
 import Home1 from './assets/example_home_1.jpg';
 import Home2 from './assets/example_home_2.jpg';
 import Home3 from './assets/example_home_3.jpg';
@@ -67,6 +68,15 @@ function AnimatedRoutes() {
             </>
           </motion.div>
         } />
+        <Route path='/exteriors' element={
+          <motion.div
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageTransitionVariants}>
+              <Exteriors />
+            </motion.div>
+        } />
       </Routes>
     </AnimatePresence>
   );
@@ -78,7 +88,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 4000);
+    }, 3000);
   }, []);
 
   if (loading) {

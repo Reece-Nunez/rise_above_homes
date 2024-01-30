@@ -15,6 +15,46 @@ html, body {
   display: grid;
 }
 
+/* Custom styles for navigation buttons */
+.swiper-button-next, .swiper-button-prev {
+  color: black; /* Color of the arrow */
+   /* Make it round */
+  width: 40px; /* Width and */
+  height: 40px; /* height of the buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1; /* Make them always visible */
+}
+
+/* Hover state */
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  background-color: #ddd; /* Color on hover */
+}
+
+/* Custom styles for pagination bullets */
+.swiper-pagination-bullet {
+  background-color: black; /* Bullet color */
+  width: 12px; /* Bullet width */
+  height: 12px; /* Bullet height */
+  opacity: 0.5; /* Bullet opacity */
+  border-radius: 50%; /* Make bullets round */
+}
+
+
+
+/* Active bullet */
+.swiper-pagination-bullet-active {
+  background-color: rgb(39, 39, 207); /* Active bullet color */
+  opacity: 1;
+}
+
+.swiper-pagination {
+  text-align: center;
+  position: static;
+  padding-top: 10px;
+}
+
 .slides {
   height: 875px;
   padding-bottom: 50px;
