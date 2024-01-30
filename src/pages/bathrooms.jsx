@@ -9,11 +9,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import bathroom1 from '../assets/bathroom1.jpg';
-import bathroom2 from '../assets/bathroom2.webp';
+import bathroom2 from '../assets/bathroom2.jpg';
 import bathroom3 from '../assets/bathroom3.jpg';
 import bathroom4 from '../assets/bathroom4.jpg';
-import bathroom5 from '../assets/bathroom5.jpg';
-import bathroom6 from '../assets/bathroom6.jpg';
+import bathroom5 from '../assets/bathroom5.webp';
+import bathroom6 from '../assets/bathroom6.webp';
 
 
 const ImageGallery = () => {

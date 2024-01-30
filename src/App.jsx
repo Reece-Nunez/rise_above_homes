@@ -18,6 +18,7 @@ import HouseAnimation from './components/HouseAnimation';
 import Exteriors from './pages/exteriors';
 import Interiors from './pages/interiors';
 import Kitchens from './pages/kitchens';
+import Bathrooms from './pages/bathrooms';
 
 import Home1 from './assets/example_home_1.jpg';
 import Home2 from './assets/example_home_2.jpg';
@@ -100,6 +101,15 @@ function AnimatedRoutes() {
             exit="exit"
             variants={pageTransitionVariants}>
               <Kitchens />
+            </motion.div>
+        } />
+        <Route path='/bathrooms' element={
+          <motion.div
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageTransitionVariants}>
+              <Bathrooms />
             </motion.div>
         } />
       </Routes>
