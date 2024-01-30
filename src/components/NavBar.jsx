@@ -37,6 +37,17 @@ const Navbar = () => {
         }, 0);
     };
 
+    const handleNavigationClick = (sectionId) => {
+        const section = document.querySelector(sectionId);
+        if(section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        setIsOpen(false);
+        setShowGalleryDropdown(false);
+        setShowServicesDropdown(false);
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             const isScrolled = window.scrollY > 400;
@@ -64,10 +75,10 @@ const Navbar = () => {
             <div className='hidden sm:flex'>
                 <ul className="menu_items flex">
                     <li className="mr-24">
-                        <a href="/#home" onClick={() => handleServicesClick('home')} className="text-black hover:text-blue-700 text-2xl">Home</a>
+                        <a href="/#home" onClick={() => handleNavigationClick('#home')} className="text-black hover:text-blue-700 text-2xl">Home</a>
                     </li>
                     <li className="mr-24">
-                        <a href="/#about" className="text-black hover:text-blue-700 text-2xl">About</a>
+                        <a href="/#about" onClick={() => handleNavigationClick('about')} className="text-black hover:text-blue-700 text-2xl">About</a>
                     </li>
                     <li className="mr-24 relative">
                         <button onClick={toggleGalleryDropdown} className='flex text-black hover:text-blue-700 text-2xl'>
@@ -109,7 +120,7 @@ const Navbar = () => {
                         )}
                     </li>
                     <li>
-                        <a href="/#contact" className="text-black hover:text-blue-700 text-2xl">Contact Us</a>
+                        <a href="/#contact" onClick={() => handleNavigationClick('#contact_us')} className="text-black hover:text-blue-700 text-2xl">Contact Us</a>
                     </li>
                 </ul>
             </div>

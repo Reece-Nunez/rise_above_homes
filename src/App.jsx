@@ -1,18 +1,24 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import Services from './pages/Services';
 import './App.css'
+
+import Services from './pages/Services';
+
 import Navbar from './components/NavBar';
 import Slideshow from './components/Slideshow';
 import About from './components/About';
 import Gallery from './components/Gallery';
 import ContactForm from './components/ContactForm';
+import Footer from './components/Footer';
+
 import LoadingSpinner from './components/LoadingSpinner';
 import HouseAnimation from './components/HouseAnimation';
-import Footer from './components/Footer';
-import Exteriors from './pages/exteriors'
-import Interiors from './pages/interiors'
+
+import Exteriors from './pages/exteriors';
+import Interiors from './pages/interiors';
+import Kitchens from './pages/kitchens';
+
 import Home1 from './assets/example_home_1.jpg';
 import Home2 from './assets/example_home_2.jpg';
 import Home3 from './assets/example_home_3.jpg';
@@ -85,6 +91,15 @@ function AnimatedRoutes() {
             exit="exit"
             variants={pageTransitionVariants}>
               <Interiors />
+            </motion.div>
+        } />
+        <Route path='/kitchens' element={
+          <motion.div
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageTransitionVariants}>
+              <Kitchens />
             </motion.div>
         } />
       </Routes>

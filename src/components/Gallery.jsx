@@ -10,7 +10,7 @@ const Gallery = () => {
     const controls = useAnimation(); // Initialize the animation controls
 
     const [ref, inView] = useInView({
-        threshold: 0.8, // 80% of the item must be visible before triggering
+        threshold: 0.2, // 20% of the item must be visible before triggering
         triggerOnce: true // Animation will only occur once
     });
 
@@ -60,7 +60,7 @@ const Gallery = () => {
                     className="group flex flex-col items-center"
                     variants={itemVariants}
                 >
-                    <img src={img} alt={title} className="gallery_images w-full h-96 rounded-lg transform group-hover:scale-110 transition-transform duration-300 ease-in-out" />
+                    <img src={img} alt={title} className="gallery_images w-full h-96 rounded-lg transform group-hover:scale-110 transition-transform duration-200 ease-in-out" />
                     <p className="text-center my-12 text-xl ">{title}</p>
                 </motion.a>
             ))}
