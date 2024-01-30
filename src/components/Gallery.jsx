@@ -43,6 +43,8 @@ const Gallery = () => {
         show: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 100 } }
     };
 
+    
+
     return (
         <motion.div
             ref={ref} // Attach the ref to the motion.div to track its visibility

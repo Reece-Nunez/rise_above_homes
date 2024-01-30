@@ -1,4 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import React from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
 import 'swiper/css';
 import 'swiper/css/scrollbar';
@@ -26,12 +29,50 @@ const ImageGallery = () => {
         exterior6
     ];
 
+    const controls = useAnimation();
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+        threshold: 0.5,
+    });
+
+    React.useEffect(() => {
+        if (inView) {
+            controls.start('visible');
+        } else {
+            controls.start('hidden');
+        }
+    }, [controls, inView]);
+
+    const fadeInVariants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 }
+    };
 
     return (
         <div>
             <div className='text-center mt-32 text-5xl'>
-                <h1>Exteriors</h1>
-                <hr className="mx-96 border-1 border-gray-600 mt-8 mb-12" />
+                <motion.h1
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                variants={{
+                    visible: { opacity: 1, y: 0 },
+                    hidden: { opacity: 0, y: -20 }
+                }}
+                transition={{ duration: 2 }}
+                >
+                    Exteriors
+                </motion.h1>
+                <motion.hr 
+                className="mx-96 border-1 border-gray-600 mt-8 mb-12" 
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                variants={{
+                    visible: { opacity: 1, scaleX: 1},
+                    hidden: { opacity: 0, scaleX: 0 }
+                }}
+                transition={{ duration: 4, delay: .2 }}/>
             </div>
             <>
                 <Swiper
@@ -45,7 +86,13 @@ const ImageGallery = () => {
                 >
                     {images.map((image, index) => (
                         <SwiperSlide key={index}>
-                            <img className='h-[400px] w-full' src={image} alt={`Slide ${index}`} />
+                            <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            variants={fadeInVariants}
+                            transition={{ duration: 3 }}>
+                                <img className='h-[400px] w-full' src={image} alt={`Slide ${index}`} />
+                            </motion.div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
