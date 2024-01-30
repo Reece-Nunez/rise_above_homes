@@ -37,6 +37,11 @@ const Navbar = () => {
         }, 0);
     };
 
+    const handleDropdownLinkClick = (sectionId) => {
+        toggleMenu();
+        handleServicesClick(sectionId);
+    }
+
     const handleNavigationClick = (sectionId) => {
         const section = document.querySelector(sectionId);
         if(section) {
@@ -142,10 +147,49 @@ const Navbar = () => {
                             <a href="/#about" className="text-black hover:text-blue-500 text-sm ">About</a>
                         </li>
                         <li className="my-4">
-                            <a href="/#gallery" className="text-black hover:text-blue-500 text-sm ">Gallery</a>
+                            <button onClick={toggleGalleryDropdown} className="flex justify-center items-center text-black hover:text-blue-500 text-sm">
+                                Gallery <ChevronDownIcon className={`flex mt-2 w-3 h-3 ml-2 transform transition duration-300 ease-in-out ${showGalleryDropdown ? 'rotate-180' : ''}`} />
+                            </button>
+                            {showGalleryDropdown && (
+                                // Dropdown for Gallery
+                                <div className="flex flex-col items-center text-center">
+                                    <div className='absolute left-1/2 transform -translate-x-1/2 mt-4 py-2 w-48 bg-white rounded-md shadow-xl z-20'>
+                                        <Link to="/exteriors" onClick={() => handleDropdownLinkClick('exteriors')} className="block px-4 py-2 text-black hover:text-blue-700 text-sm">
+                                            Exteriors
+                                        </Link>
+                                        <Link to="/interiors" onClick={() => handleDropdownLinkClick('interiors')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
+                                            Interiors
+                                        </Link>
+                                        <Link to="/kitchens "onClick={() => handleDropdownLinkClick('kitchens')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
+                                            Kitchens
+                                        </Link>
+                                        <Link to="/bathrooms "onClick={() => handleDropdownLinkClick('bathrooms')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
+                                            Bathrooms
+                                        </Link>
+                                    </div>
+                                </div>
+                            )}
                         </li>
-                        <li className="my-4">
-                            <Link to="/services#design" className="text-black hover:text-blue-500 text-sm ">Services</Link>
+                        <li className="flex my-4">
+                            <button onClick={toggleServicesDropdown} className="flex text-black hover:text-blue-500 text-sm">
+                                Services <ChevronDownIcon className={`flex mt-2 w-3 h-3 ml-2 transform transition duration-300 ease-in-out ${showServicesDropdown ? 'rotate-180' : ''}`} />
+                            </button>
+                            {showServicesDropdown && (
+                                // Dropdown for Services
+                                <div className="flex flex-col items-center text-center">
+                                    <div className='absolute left-1/2 transform -translate-x-1/2 mt-4 py-2 w-48 bg-white rounded-md shadow-xl z-20'>
+                                <Link to="/services#design" onClick={() => handleDropdownLinkClick('design')} className="block px-4 py-2 text-black hover:text-blue-700 text-sm">
+                                    Design/Build
+                                </Link>
+                                <Link to="/services#floor_plans" onClick={() => handleDropdownLinkClick('floor_plans')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
+                                    Floor Plans
+                                </Link>
+                                <Link to="/services#remodel "onClick={() => handleDropdownLinkClick('remodel')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
+                                    Remodeling
+                                </Link>
+                            </div>
+                                </div>
+                            )}
                         </li>
                         <li className='my-4'>
                             <a href="/#contact" className="text-black hover:text-blue-500 text-sm ">Contact Us</a>

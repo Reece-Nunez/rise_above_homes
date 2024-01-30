@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
@@ -19,6 +19,22 @@ import exterior6 from '../assets/exterior6.jpg';
 
 
 const ImageGallery = () => {
+    const [slidesPerView, setSlidesPerView] = useState(3);
+
+    const updateSlidesPerView = () => {
+        if (window.innerWidth < 768) {
+            setSlidesPerView(1);
+        } else {
+            setSlidesPerView(3);
+        }
+    };
+
+    useEffect(() => {
+        updateSlidesPerView();
+        window.addEventListener('resize', updateSlidesPerView);
+
+        return () => window.removeEventListener('resize', updateSlidesPerView);
+    },[]);
 
     const images = [
         exterior1,
@@ -78,7 +94,7 @@ const ImageGallery = () => {
                 <Swiper
                     className='swiper-container mt-12 mb-32 mx-20'
                     spaceBetween={50}
-                    slidesPerView={3}
+                    slidesPerView={slidesPerView}
                     navigation
                     pagination={{ clickable: true }}
                     modules={[Navigation, Pagination]}
@@ -91,7 +107,7 @@ const ImageGallery = () => {
                             animate="visible"
                             variants={fadeInVariants}
                             transition={{ duration: 3 }}>
-                                <img className='h-[400px] w-full' src={image} alt={`Slide ${index}`} />
+                                <img className='image h-[400px] w-full' src={image} alt={`Slide ${index}`} />
                             </motion.div>
                         </SwiperSlide>
                     ))}

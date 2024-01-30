@@ -115,6 +115,28 @@ html, body {
   .gallery_grid {
     grid-template-columns: 1fr;
   }
+
+  .swiper-container {
+    /* Adjust swiper settings for smaller screens */
+    spaceBetween: 30;
+    slidesPerView: 1;
+}
+
+.image {
+    /* Adjust image size for smaller screens */
+    height: 200px;
+}
+
+.text-center {
+    /* Adjust text size for smaller screens */
+    font-size: 3xl;
+}
+
+.mx-96 {
+    /* Adjust margins for smaller screens */
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
 }
 
 /* For small devices (phones, 480px and up) */
@@ -189,5 +211,30 @@ html, body {
 
   #column1 {
     height: min-content;
+  }
+
+  .swiper-container {
+    /* Adjust swiper settings for smaller screens */
+    spaceBetween: 30;
+    slidesPerView: 1;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  .image {
+      /* Adjust image size for smaller screens */
+      height: 300px;
+
+  }
+
+  .text-center {
+      /* Adjust text size for smaller screens */
+      font-size: 3xl;
+  }
+
+  .mx-96 {
+      /* Adjust margins for smaller screens */
+      margin-left: 1rem;
+      margin-right: 1rem;
   }
 }
