@@ -75,16 +75,16 @@ const Navbar = () => {
                         </button>
                         {showGalleryDropdown && (
                             <div className='absolute left-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20'>
-                                <Link to="/services#design" onClick={() => handleServicesClick('exteriors')} className="block px-4 py-2 text-black hover:text-blue-700 text-sm">
+                                <Link to="/exteriors" onClick={() => handleServicesClick('exteriors')} className="block px-4 py-2 text-black hover:text-blue-700 text-sm">
                                     Exteriors
                                 </Link>
-                                <Link to="/services#floor_plans" onClick={() => handleServicesClick('interiors')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
+                                <Link to="/interiors" onClick={() => handleServicesClick('interiors')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
                                     Interiors
                                 </Link>
-                                <Link to="/services#remodel "onClick={() => handleServicesClick('kitchens')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
+                                <Link to="/kitchens "onClick={() => handleServicesClick('kitchens')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
                                     Kitchens
                                 </Link>
-                                <Link to="/services#remodel "onClick={() => handleServicesClick('bathrooms')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
+                                <Link to="/bathrooms "onClick={() => handleServicesClick('bathrooms')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
                                     Bathrooms
                                 </Link>
                             </div>
