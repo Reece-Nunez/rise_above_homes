@@ -21,7 +21,6 @@ const Navbar = () => {
             const section = document.getElementById(sectionId);
             if (section) {
                 section.scrollIntoView({ behavior: 'smooth' });
-            
             }
         }, 0);
     };
@@ -53,34 +52,34 @@ const Navbar = () => {
             <div className='hidden sm:flex'>
                 <ul className="menu_items flex">
                     <li className="mr-24">
-                        <a href="/#home" className="text-black hover:text-gray-700 text-2xl font-bold">Home</a>
+                        <a href="/#home" onClick={() => handleServicesClick('home')} className="text-black hover:text-blue-700 text-2xl">Home</a>
                     </li>
                     <li className="mr-24">
-                        <a href="/#about" className="text-black hover:text-gray-700 text-2xl font-bold">About</a>
+                        <a href="/#about" className="text-black hover:text-blue-700 text-2xl">About</a>
                     </li>
                     <li className="mr-24">
-                        <a href="/#gallery" className="text-black hover:text-gray-700 text-2xl font-bold">Gallery</a>
+                        <a href="/#gallery" onClick={() => handleServicesClick('gallery')} className="text-black hover:text-blue-700 text-2xl">Gallery</a>
                     </li>
                     <li className="mr-24 relative">
-                        <button onClick={toggleDropdown} className='flex text-black hover:text-gray-700 text-2xl font-bold'>
-                            Services <ChevronDownIcon className={`flex mt-2 w-5 h-5 ml-2 transform ${showDropDown ? 'rotate-180' : ''}`} />
+                        <button onClick={toggleDropdown} className='flex text-black hover:text-blue-700 text-2xl'>
+                            Services <ChevronDownIcon className={`flex mt-2 w-5 h-5 ml-2 transform transition duration-300 ease-in-out ${showDropDown ? 'rotate-180' : ''}`} />
                         </button>
                         {showDropDown && (
                             <div className='absolute left-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20'>
-                                <Link to="/services#design" onClick={() => handleServicesClick('design')} className="block px-4 py-2 text-black hover:text-gray-700 text-sm">
+                                <Link to="/services#design" onClick={() => handleServicesClick('design')} className="block px-4 py-2 text-black hover:text-blue-700 text-sm">
                                     Design/Build
                                 </Link>
-                                <Link to="/services#floor_plans" onClick={() => handleServicesClick('floor_plans')} className='block px-4 py-2 text-black hover:text-gray-700 text-sm'>
+                                <Link to="/services#floor_plans" onClick={() => handleServicesClick('floor_plans')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
                                     Floor Plans
                                 </Link>
-                                <Link to="/services#remodel "onClick={() => handleServicesClick('remodel')} className='block px-4 py-2 text-black hover:text-gray-700 text-sm'>
+                                <Link to="/services#remodel "onClick={() => handleServicesClick('remodel')} className='block px-4 py-2 text-black hover:text-blue-700 text-sm'>
                                     Remodeling
                                 </Link>
                             </div>
                         )}
                     </li>
                     <li>
-                        <a href="/#contact" className="text-black hover:text-gray-700 text-2xl font-bold">Contact Us</a>
+                        <a href="/#contact" className="text-black hover:text-blue-700 text-2xl">Contact Us</a>
                     </li>
                 </ul>
             </div>

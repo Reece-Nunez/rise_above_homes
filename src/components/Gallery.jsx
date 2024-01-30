@@ -10,7 +10,7 @@ const Gallery = () => {
     const controls = useAnimation(); // Initialize the animation controls
 
     const [ref, inView] = useInView({
-        threshold: 0.3, // 80% of the item must be visible before triggering
+        threshold: 0.8, // 80% of the item must be visible before triggering
         triggerOnce: true // Animation will only occur once
     });
 
@@ -33,7 +33,7 @@ const Gallery = () => {
         show: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2, // Children animations are staggered by 0.6 seconds
+                staggerChildren: 0.4, // Children animations are staggered by 0.7 seconds
             }
         }
     };
@@ -49,7 +49,8 @@ const Gallery = () => {
             className="gallery_grid grid-cols-4 gap-32 my-32 mx-32"
             variants={galleryVariants}
             initial="hidden"
-            animate={controls}>
+            animate={controls}
+            id='gallery'>
             {images.map(({ title, url, img }) => (
                 <motion.a
                     key={title}
