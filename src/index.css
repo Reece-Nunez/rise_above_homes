@@ -29,7 +29,7 @@ html, body {
 
 /* Hover state */
 .swiper-button-next:hover, .swiper-button-prev:hover {
-  background-color: #ddd; /* Color on hover */
+  color: rgb(29 78 216);
 }
 
 /* Custom styles for pagination bullets */
@@ -42,10 +42,9 @@ html, body {
 }
 
 
-
 /* Active bullet */
 .swiper-pagination-bullet-active {
-  background-color: rgb(39, 39, 207); /* Active bullet color */
+  background-color: rgb(29 78 216); /* Active bullet color */
   opacity: 1;
 }
 
