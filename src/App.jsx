@@ -12,6 +12,7 @@ import LoadingSpinner from './components/LoadingSpinner';
 import HouseAnimation from './components/HouseAnimation';
 import Footer from './components/Footer';
 import Exteriors from './pages/exteriors'
+import Interiors from './pages/interiors'
 import Home1 from './assets/example_home_1.jpg';
 import Home2 from './assets/example_home_2.jpg';
 import Home3 from './assets/example_home_3.jpg';
@@ -75,6 +76,15 @@ function AnimatedRoutes() {
             exit="exit"
             variants={pageTransitionVariants}>
               <Exteriors />
+            </motion.div>
+        } />
+        <Route path='/interiors' element={
+          <motion.div
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageTransitionVariants}>
+              <Interiors />
             </motion.div>
         } />
       </Routes>
